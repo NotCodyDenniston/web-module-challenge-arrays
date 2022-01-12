@@ -71,7 +71,7 @@ function is31Flavors(array){
    return false
  }
 }
-console.log(is31Flavors(originalFlavors))
+console.log('task 2', is31Flavors(originalFlavors))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -90,7 +90,7 @@ function addFlavor(array, newFlavor){
  return array.unshift(newFlavor)
 }
 
-console.log('task 2', addFlavor(originalFlavors, "blue"))
+console.log('task 3', addFlavor(originalFlavors, "blue"))
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
 
@@ -107,7 +107,7 @@ function removeLastFlavor(array){
  return array
 }
 
-console.log(removeLastFlavor(originalFlavors))
+console.log('task 4', removeLastFlavor(originalFlavors))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that returns a flavor at a given index in the array.
@@ -123,7 +123,7 @@ Use the getFlavorByIndex function below to do the following:
 function getFlavorByIndex(array, index){
   return array[index]
 }
-console.log(getFlavorByIndex(originalFlavors, 2))
+console.log('task 5',getFlavorByIndex(originalFlavors, 2))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -140,13 +140,16 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(array, index){
+function removeFlavorByName(array, flavor){
   for (let i = 0; i < array.length; i++){
-
+    if (array[i] === flavor){
+      array.splice(i, 1)
+    }
   }
+  return array
 }
 
-
+console.log('task 6', removeFlavorByName(originalFlavors, 'blue'))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
@@ -171,11 +174,13 @@ Use the filterByWord function below to do the following:
 function filterByWord(array, item){
   const filteredArray = []
   for (let i = 0; i < array.length; i++){
-
-  }
+    if(array[i].includes(item)){
+      filteredArray.push(array[i])
+    }
+  } return filteredArray
 }
 
-
+console.log(filterByWord(originalFlavors, "Chocolate"))
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
 /* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors.
