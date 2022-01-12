@@ -87,7 +87,8 @@ Use the addFlavor function below to do the following:
 
 
 function addFlavor(array, newFlavor){
- return array.unshift(newFlavor)
+  array.unshift(newFlavor)
+  return array
 }
 
 console.log('task 3', addFlavor(originalFlavors, "blue"))
